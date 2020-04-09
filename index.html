@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="jsmind.css" />
+    <script type="text/javascript" src="jsmind.js"></script>
+
+    enable drag-and-drop feature
+    <script type="text/javascript" src="jsmind.draggable.js"></script>
+
+    <script type="text/javascript">
+      var options = {
+        // for more detail at next chapter
+        container: "jsmind_container", // [required] id of container
+        editable: true, // [required] whether allow edit or not
+        theme: "orange" // [required] theme
+      };
+
+      var jm = new jsMind(options);
+
+      var mind = {
+        meta: {
+          name: "jsMind remote",
+          author: "hizzgdev@163.com",
+          version: "0.2"
+        },
+        format: "node_tree",
+        data: {
+          id: "root",
+          topic: "jsMind",
+          children: [
+            {
+              id: "easy",
+              topic: "Easy",
+              direction: "left",
+              children: [
+                { id: "easy1", topic: "Easy to show" },
+                { id: "easy2", topic: "Easy to edit" },
+                { id: "easy3", topic: "Easy to store" },
+                { id: "easy4", topic: "Easy to embed" }
+              ]
+            },
+            {
+              id: "open",
+              topic: "Open Source",
+              direction: "right",
+              children: [
+                { id: "open1", topic: "on GitHub" },
+                { id: "open2", topic: "BSD License" }
+              ]
+            },
+            {
+              id: "powerful",
+              topic: "Powerful",
+              direction: "right",
+              children: [
+                { id: "powerful1", topic: "Base on Javascript" },
+                { id: "powerful2", topic: "Base on HTML5" },
+                { id: "powerful3", topic: "Depends on you" }
+              ]
+            },
+            {
+              id: "other",
+              topic: "test node",
+              direction: "left",
+              children: [
+                { id: "other1", topic: "I'm from local variable" },
+                { id: "other2", topic: "I can do everything" }
+              ]
+            }
+          ]
+        }
+      };
+
+      jm.show(mind);
+    </script>
+  </head>
+
+  <body>
+    <div id="jsmind_container">test</div>
+  </body>
+</html>
